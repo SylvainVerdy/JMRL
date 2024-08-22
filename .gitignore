@@ -1,0 +1,7 @@
+
+dataset_caid/*
+*.log
+*.pyc
+*.txt
+
+stricts*

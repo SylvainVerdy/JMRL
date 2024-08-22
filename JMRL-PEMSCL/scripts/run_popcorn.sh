@@ -1,0 +1,20 @@
+CUDA_VISIBLE_DEVICES=0 PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python python ./codes/train.py --data_dir ./dataset/textmine2025/docred_format/ \
+                --transformer_type camembert  \
+                --model_name_or_path almanach/camembert-large \
+                --train_file train_annotated.json  \
+                --dev_file dev.json \
+                --train_batch_size 1 \
+                --test_batch_size 4 \
+                --gradient_accumulation_steps 4 \
+                --num_labels 4 \
+                --learning_rate 2e-5 \
+                --max_grad_norm 1.0 \
+                --warmup_ratio 0.06 \
+                --max_seq_length 1024 \
+                --num_train_epochs 100.0 \
+                --seed 66 \
+                --num_class 38 \
+                --gpu 0 \
+                --tau 0.2 \
+                --tau_base 2.0 \
+                --save_path ./checkpoints/popcorn_textmine_jmrl_combined_v2.pt
